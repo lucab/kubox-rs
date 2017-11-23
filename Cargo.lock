@@ -1,0 +1,58 @@
+[root]
+name = "kubox"
+version = "0.0.1"
+dependencies = [
+ "envoption 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "nix 0.10.0-pre (git+https://github.com/nix-rust/nix?rev=63ce242)",
+]
+
+[[package]]
+name = "bitflags"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "cfg-if"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "envoption"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "error-chain"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "libc"
+version = "0.2.33"
+source = "git+https://github.com/rust-lang/libc#614199a8d16e192aad6f5191923a7b95d0dc2673"
+
+[[package]]
+name = "nix"
+version = "0.10.0-pre"
+source = "git+https://github.com/nix-rust/nix?rev=63ce242#63ce242b89460ec78e869b990831ba0c5d0cc46f"
+dependencies = [
+ "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.33 (git+https://github.com/rust-lang/libc)",
+ "void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "void"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4efd02e230a02e18f92fc2735f44597385ed02ad8f831e7c1c1156ee5e1ab3a5"
+"checksum cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d4c819a1287eb618df47cc647173c5c4c66ba19d888a6e50d605672aed3140de"
+"checksum envoption 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9a0d00a04f5ad3a7097409ea66cecf267fd7bbac98e66bc97614e14fe32b4e35"
+"checksum error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ff511d5dc435d703f4971bc399647c9bc38e20cb41452e3b9feb4765419ed3f3"
+"checksum libc 0.2.33 (git+https://github.com/rust-lang/libc)" = "<none>"
+"checksum nix 0.10.0-pre (git+https://github.com/nix-rust/nix?rev=63ce242)" = "<none>"
+"checksum void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
