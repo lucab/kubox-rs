@@ -38,8 +38,10 @@ fn run() -> Result<()> {
     let bin = argv.nth(1).ok_or_else(|| "not enough arguments")?;
     let relbin = String::from("./") + &bin.to_string_lossy();
 
-    let targets = vec!["uts", "ipc", "cgroup", "net", "pid", "mnt", "user"];
+    // TODO(lucab): mark this CLOEXEC
+    let basedir = fs::File::open("/").chain_err(|| "unable to open /")?;
 
+    let targets = vec!["uts", "ipc", "cgroup", "net", "pid", "mnt", "user"];
     let mut fds = Vec::with_capacity(targets.len());
     for name in targets {
         let path = format!("{}/{}/ns/{}", HOST_PROCFS, target_pid, &name);
@@ -59,8 +61,6 @@ fn run() -> Result<()> {
         res.chain_err(|| format!("unable to setns for {}", &name))?;
     }
 
-    // TODO(lucab): mark this CLOEXEC
-    let basedir = fs::File::open("/").chain_err(|| "unable to open /")?;
     unistd::execveat(
         basedir.into_raw_fd(),
         &CString::new(relbin).unwrap(),
