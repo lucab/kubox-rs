@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kubox-bins-am64
+  name: kubox-bins-amd64
 spec:
   hostPID: true
   containers:
@@ -11,4 +11,4 @@ spec:
     image: lucab/kubox-bins-amd64:dev-latest
     imagePullPolicy: Always
     command:
-    - "/kubox"
+    - "/sbin/kubox"
