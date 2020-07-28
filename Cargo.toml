@@ -6,7 +6,7 @@ authors = ["Luca Bruno <luca.bruno@coreos.com>"]
 [dependencies]
 envoption = "0.2"
 error-chain = { version = "0.12", default-features = false }
-nix = "0.13"
+nix = "0.18"
 
 [profile.release]
 lto = true
